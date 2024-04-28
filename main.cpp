@@ -1,7 +1,6 @@
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
-
 class Email
 {
 
@@ -324,7 +323,7 @@ public:
 class adress{
 
     string place , type , describtion , adress;
-    public:
+public:
     void setplace(string p){
         place = p;
     }
@@ -344,7 +343,7 @@ class adress{
 class phone{
     int phone ;
     string type , describtion;
-    public:
+public:
     void setphone(int p){
         phone = p;
     }
@@ -360,7 +359,6 @@ class phone{
 };
 
 
-
 int main()
 {
     cout<<"hi koko";
@@ -368,8 +366,6 @@ int main()
     Email email=Email("s@gmail.com","vip","blablabla");
 
     cout <<email.getDescription();
-
-
    return 0;
 }
 
