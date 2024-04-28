@@ -83,7 +83,54 @@ public:
 
 };
 
+class Users{
+    string name ;
+    static int count ;
+public:
+    Users(string name){
+        this->name = name;
+        count++;
+    }
+    string getname(){
+        return  name;
+    }
+    static int getcount(){
+        return count;
+    }
+};
+class contact{
+    vector<Users>arr;
+public:
+    void add(Users user){
+        arr.push_back(user);
+    }
+    void deletee(string user){
 
+        for (auto it = arr.begin(); it != arr.end(); ++it) {
+            if(it->getname() == user){
+                arr.erase(it);
+                break;
+            }
+        }
+    }
+    string search(string user){
+        for (auto it = arr.begin()  ; it!=arr.end() ; it++) {
+            if(it->getname() == user){
+                return it->getname();
+                break;
+            }
+        }
+        return "NOT found";
+    }
+
+    void showall(){
+        cout <<" There is a list of user "<<"\n";
+        for (int i = 0; i < arr.size(); ++i) {
+            cout <<arr[i].getname() <<"\n";
+        }
+    }
+
+};
 
 class User
 {
