@@ -2,12 +2,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-
-
-
-
-
 class Email
 {
 
@@ -75,10 +69,6 @@ public:
         return this->description;
 
     }
-
-
-
-
 
 
 };
@@ -331,7 +321,43 @@ public:
 
 };
 
+class adress{
 
+    string place , type , describtion , adress;
+    public:
+    void setplace(string p){
+        place = p;
+    }
+    void settype(string t){
+        type = t;
+    }
+    void setdescribtion(string d){
+        describtion = d;
+    }
+    void setadress(string adress){
+        this->adress = adress;
+    }
+    string getadress(){
+        return this->adress;
+    }
+};
+class phone{
+    int phone ;
+    string type , describtion;
+    public:
+    void setphone(int p){
+        phone = p;
+    }
+    void settype(string t){
+        type = t;
+    }
+    void setdescribtion(string d){
+        describtion = d;
+    }
+    int getphone(){
+        return this->phone;
+    }
+};
 
 
 
