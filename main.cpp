@@ -285,6 +285,95 @@ public:
 };
 
 
+class User{
+    string name ;
+     static int count ;
+public:
+    User(string name){
+        this->name = name;
+        count++;
+    }
+    string getname(){
+        return  name;
+    }
+    static int getcount(){
+        return count;
+    }
+};
+int User::count = 0;
+
+class contact{
+    vector<User>arr;
+    public:
+        void add(User user){
+            arr.push_back(user);
+        }
+        void deletee(string user){
+
+            for (auto it = arr.begin(); it != arr.end(); ++it) {
+                if(it->getname() == user){
+                    arr.erase(it);
+                    break;
+                }
+            }
+        }
+        string search(string user){
+            for (auto it = arr.begin()  ; it!=arr.end() ; it++) {
+                if(it->getname() == user){
+                    return it->getname();
+                }
+            }
+            return "NOT found";
+        }
+
+        void showall(){
+            cout <<" There is a list of user "<<"\n";
+            for (int i = 0; i < arr.size(); ++i) {
+                cout <<arr[i].getname() <<"\n";
+            }
+        }
+
+};
+
+class adress{
+
+    string place , type , describtion , adress;
+    public:
+    void setplace(string p){
+        place = p;
+    }
+    void settype(string t){
+        type = t;
+    }
+    void setdescribtion(string d){
+        describtion = d;
+    }
+    void setadress(string adress){
+        this->adress = adress;
+    }
+    string getadress(){
+        return this->adress;
+    }
+};
+class phone{
+    int phone ;
+    string type , describtion;
+    public:
+        void setphone(int p){
+            phone = p;
+        }
+        void settype(string t){
+            type = t;
+        }
+        void setdescribtion(string d){
+            describtion = d;
+        }
+        int getphone(){
+            return this->phone;
+        }
+};
+
+
 
 
 
@@ -295,8 +384,21 @@ int main()
     Email email=Email("s@gmail.com","vip","blablabla");
 
     cout <<email.getDescription();
+    //    contact obj5 ;
+//    obj5.add(User("lama"));
+//    obj5.add(User("nesma"));
+//    obj5.add(User("atya"));
+//    obj5.add(User("s3dya"));
+//    obj5.add(User("fawzya"));
+//
+////    obj5.deletee("atya");
+//    obj5.showall();
+//    cout <<"*********************************"<<"\n";
+//    string f = obj5.search("atya");
+//    cout << f <<"\n";
 
 
    return 0;
 }
+
 
